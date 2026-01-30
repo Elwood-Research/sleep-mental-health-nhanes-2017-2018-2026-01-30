@@ -1,4 +1,4 @@
-Status: REVIEW_APPROVED
+Status: PUBLISHED
 Date: 2026-01-30
 Cycle: NHANES 2017-2018
 
@@ -7,4 +7,7 @@ Artifacts:
 - Figure: figures/sleep_hours_vs_dep10_curve.png
 - Manuscript: manuscript/manuscript.tex, manuscript/manuscript.pdf
 
-Next: Publish to GitHub.
+GitHub: https://github.com/Elwood-Research/sleep-mental-health-nhanes-2017-2018-2026-01-30
+Last commit: 2a6aa72
+
+Next: None.
