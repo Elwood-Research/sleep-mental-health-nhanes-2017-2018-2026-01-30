@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+\onehalfspacing
+
+\title{Sleep Duration and Depressive Symptoms in U.S. Adults: NHANES 2017--2018}
+\author{Elwood Research\\\texttt{elwoodresearch@gmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+\textbf{Background:} Both short and long sleep duration have been linked to depressive symptoms in prior literature. Nationally representative estimates using validated depression screening tools support evaluation of this association.
+\\
+\textbf{Methods:} We conducted a cross-sectional analysis of NHANES 2017--2018 adults (\(\ge\)18 years), excluding pregnant participants and using complete-case data for covariate adjustment. Usual sleep duration on weekdays/workdays was measured in hours. Depressive symptoms were defined as PHQ-9 score \(\ge 10\) \citep{kroenke2001phq9}. We fit survey-weighted logistic regression models accounting for NHANES design (SDMVPSU/SDMVSTRA) and interview weights (WTINT2YR), adjusting for age, sex, race/ethnicity, education, family income-to-poverty ratio, body mass index, and ever smoking.
+\\
+\textbf{Results:} The analytic sample included 2{,}944 adults (unweighted). Weighted prevalence of PHQ-9 \(\ge 10\) was 6.1\% (95\% CI 4.7\%--7.5\%) among those reporting 7--\(<9\) hours of sleep, 14.9\% (11.7\%--18.0\%) for \(<6\) hours, and 12.8\% (9.8\%--15.7\%) for \(\ge 9\) hours. In adjusted models using 7--\(<9\) hours as the reference, odds of PHQ-9 \(\ge 10\) were higher for \(<6\) hours (OR 2.51, 95\% CI 1.65--3.80) and \(\ge 9\) hours (OR 1.87, 95\% CI 1.37--2.55).
+\\
+\textbf{Conclusions:} In NHANES 2017--2018, both short and long reported sleep duration were associated with higher odds of clinically relevant depressive symptoms compared with mid-range sleep. Findings are cross-sectional and do not establish causality.
+\end{abstract}
+
+\section{Introduction}
+Sleep health is a multidimensional construct relevant to physical and mental health \citep{buysse2014sleephealth}. Prior evidence, including prospective meta-analytic work, suggests that both short and long sleep duration are associated with elevated risk of depression compared with normal sleep duration \citep{zhai2015sleepdepression}. National survey data such as NHANES allow estimation of this association in the U.S. population using validated screening instruments, including the PHQ-9 \citep{kroenke2001phq9}.
+
+\section{Methods}
+\subsection{Data source and study population}
+We used publicly available NHANES 2017--2018 data and followed NHANES analytic guidance \citep{nhanes20172018}. Participants aged 18 years and older were included. We excluded participants who were pregnant (when pregnancy status was available) and restricted to complete-case observations for exposure, outcome, design variables, and covariates.
+
+\subsection{Exposure: sleep duration}
+Usual sleep duration on weekdays/workdays (hours) was used as the primary exposure. For interpretability, we categorized sleep duration into \(<6\), 6--\(<7\), 7--\(<9\), and \(\ge 9\) hours, using 7--\(<9\) hours as the reference category.
+
+\subsection{Outcome: depressive symptoms}
+Depressive symptoms were assessed using the PHQ-9. Following standard practice, clinically relevant depressive symptoms were defined as PHQ-9 score \(\ge 10\) \citep{kroenke2001phq9}.
+
+\subsection{Covariates}
+We adjusted for age, sex, race/ethnicity, education, family income-to-poverty ratio (PIR), body mass index (BMI), and ever smoking.
+
+\subsection{Statistical analysis}
+All analyses accounted for the NHANES complex survey design using SDMVPSU (primary sampling unit), SDMVSTRA (strata), and interview weights (WTINT2YR). We estimated weighted prevalence of PHQ-9 \(\ge 10\) across sleep categories. We fit survey-weighted logistic regression models for PHQ-9 \(\ge 10\) with sleep duration categories and covariate adjustment.
+
+\section{Results}
+The analytic sample included 2{,}944 adults (unweighted). Weighted prevalence of PHQ-9 \(\ge 10\) varied by sleep category: 14.9\% (95\% CI 11.7\%--18.0\%) for \(<6\) hours, 8.7\% (4.0\%--13.4\%) for 6--\(<7\) hours, 6.1\% (4.7\%--7.5\%) for 7--\(<9\) hours, and 12.8\% (9.8\%--15.7\%) for \(\ge 9\) hours.
+
+In adjusted models using 7--\(<9\) hours as the reference, odds of PHQ-9 \(\ge 10\) were higher for \(<6\) hours (OR 2.51, 95\% CI 1.65--3.80) and \(\ge 9\) hours (OR 1.87, 95\% CI 1.37--2.55). The 6--\(<7\) hours category showed a positive but imprecise association (OR 1.41, 95\% CI 0.78--2.53).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\textwidth]{../figures/sleep_hours_vs_dep10_curve.png}
+\caption{Adjusted predicted probability of PHQ-9 \(\ge 10\) across sleep duration (weekdays/workdays).}
+\label{fig:curve}
+\end{figure}
+
+\section{Discussion}
+In this NHANES 2017--2018 cross-sectional analysis, both short sleep (\(<6\) hours) and long sleep (\(\ge 9\) hours) were associated with higher odds of clinically relevant depressive symptoms compared with 7--\(<9\) hours. The pattern is consistent with prior literature suggesting elevated depression risk at both extremes of sleep duration \citep{zhai2015sleepdepression}.
+
+\subsection{Limitations}
+This analysis is cross-sectional and cannot establish temporal ordering or causality. Sleep duration was self-reported and may be misclassified. We used complete-case analysis for covariates, which may introduce selection bias if missingness is not random. Residual confounding (e.g., comorbidities, medication use, sleep disorders) is possible.
+
+\section{Conclusion}
+Among U.S. adults in NHANES 2017--2018, short and long reported sleep duration were associated with higher odds of clinically relevant depressive symptoms compared with mid-range sleep.
+
+\bibliographystyle{plainnat}
+\bibliography{../references}
+
+\end{document}

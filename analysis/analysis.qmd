@@ -1,0 +1,49 @@
+---
+title: "Sleep Duration and Depressive Symptoms in U.S. Adults"
+subtitle: "NHANES 2017-2018 (Survey-Weighted Cross-Sectional Analysis)"
+bibliography: ../references.bib
+format:
+  pdf:
+    documentclass: article
+    number-sections: true
+  html:
+    toc: true
+    number-sections: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Overview
+
+This report examines the association between usual sleep duration on weekdays/workdays and clinically relevant depressive symptoms (PHQ-9 >= 10) among U.S. adults using NHANES 2017-2018.
+
+Notes:
+
+- Data files are downloaded from the official CDC NHANES Public DataFiles endpoint and cached under `data/raw/`.
+- The analysis uses the NHANES complex survey design (SDMVPSU/SDMVSTRA) with interview weights (WTINT2YR).
+
+## Run analysis pipeline
+
+```{r}
+.libPaths(unique(c(Sys.getenv("R_LIBS_USER"), .libPaths())))
+
+study_dir <- normalizePath(file.path(getwd(), ".."), winslash = "/", mustWork = TRUE)
+analysis_runner <- file.path(study_dir, "analysis", "run_analysis.R")
+
+stopifnot(file.exists(analysis_runner))
+
+system2("Rscript", args = analysis_runner)
+```
+
+## Results summary
+
+```{r}
+summary_path <- file.path(study_dir, "results-summary.md")
+cat(readLines(summary_path), sep = "\n")
+```
+
+## Figure
+
+![](../figures/sleep_hours_vs_dep10_curve.png){fig-alt="Predicted probability of PHQ-9 >= 10 across sleep duration"}
